@@ -1,3 +1,7 @@
+body {
+  background-color: black;
+}
+
 .App {
   text-align: center;
 }
@@ -33,6 +37,35 @@
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(180deg);
   }
+}
+
+.nav-link {
+  color: white !important;
+}
+
+
+
+.nav-link1 {
+  color: white !important;
+}
+
+.nav-link2 {
+  color: black !important;
+  text-decoration: none;
+}
+
+.navbar-brand {
+  color: rgb(156, 8, 8) !important;
+}
+
+.navbar-toggler {
+  background-color: white !important;
+}
+
+.MuiCardContent-root {
+  max-height: 150px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
