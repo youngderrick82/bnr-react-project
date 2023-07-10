@@ -64,8 +64,11 @@ body {
   background-color: white !important;
 }
 
+.navbar-nav {
+  align-items: center;
+}
+
 .MuiCardContent-root {
   max-height: 150px;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  overflow: auto;
 }

@@ -40,14 +40,17 @@ const VideoCards = () => {
   const [videos, setVideos] = useState([]);
 
   const fetchVideoData = () => {
-    fetch("https://jsonplaceholder.typicode.com/albums/1/photos")
+    fetch(
+      "https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UC2ZgT5OJZvH4rogFojlEksA&maxResults=3&order=date&key=AIzaSyBhy4QSDgpDgUxGW5GAyVC3Re47y4Q8yEI"
+    )
       .then((response) => {
         return response.json();
       })
       .then((data) => {
-        setVideos(data);
+        setVideos(data.items);
       });
   };
+
 
   useEffect(() => {
     fetchVideoData();
@@ -61,22 +64,22 @@ const VideoCards = () => {
             <Card raised="true" sx={{ maxWidth: 345 }}>
               <CardMedia
                 style={{ height: 140, width: "100%" }}
-                image={video.thumbnailUrl}
-                title="Best Anime per A-kon 2023"
-                alt="Best Anime per A-kon 2023"
+                image={video.snippet.thumbnails.high.url}
+                title={video.snippet.title}
+                alt={video.snippet.title}
               />
               <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  Black Nerd Rises
+                <Typography gutterBottom variant="h5" component="div">{
+                  video.snippet.title
+                }
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Lizards are a widespread group of squadmate reptiles, with
-                  over 6,000 species, ranging across all continents except
-                  Antarctica
+                <Typography variant="body2" color="text.secondary">{
+                  video.snippet.description
+                }
                 </Typography>
                 <CardActions>
-                  <Button size="large">Watch On Youtube</Button>
-                  <Button size="small">Share</Button>
+                  <Button  color="secondary" variant="contained" target="_blank" href={'https://www.youtube.com/watch?v=' + video.id.videoId + '_channel=BlackNerdRises'} size="large">Watch On Youtube</Button>
+                  {/* <Button size="small">Share</Button> */}
                 </CardActions>
               </CardContent>
             </Card>
