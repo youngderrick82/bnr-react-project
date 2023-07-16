@@ -4,11 +4,12 @@ import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import { createTheme } from '@mui/material/styles';
+import { Tiktok } from "react-bootstrap-icons";
 import { Card, CardContent, CardMedia, IconButton, Typography } from "@material-ui/core";
 
 
 const MemberCards = (props) => {
-    const { uname, about, facebook, twitter, instagram, thread, image } = props.data;
+    const { uname, about, tiktok, facebook, twitter, instagram, thread, image } = props.data;
     
     return (
         <Container>
@@ -40,6 +41,9 @@ const MemberCards = (props) => {
                 </IconButton>
                 <IconButton href={twitter} target="_blank" aria-label={uname + " Twitter Link"} style={{color: "#90caf9"}}>
                     <TwitterIcon />
+                </IconButton>
+                <IconButton>
+                    <Tiktok href={tiktok} target="_blank" aria-label={uname + " Tiktok Link"} style={{color: "black"}} />
                 </IconButton>
                 </CardContent>
                
