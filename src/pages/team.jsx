@@ -9,7 +9,7 @@ const MeetTeam = () => {
     return (
     <Container> 
 
-    <div>This is the Meet the Team page</div>
+    <div>Black Nerd Rises Squad</div>
     
     {teamMembers.map((member) => (
 

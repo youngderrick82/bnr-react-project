@@ -41,8 +41,18 @@ body {
   }
 }
 
+.navbar {
+  background-color: white;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 5px 0px;
+  height: 8vh;
+  box-shadow: 1px 0px 0px 1px grey;
+}
+
 .nav-link {
-  color: white !important;
+  color: black !important;
+  font-family: 'skranji', cursive;
+  font-size: 2.0rem !important;
 }
 
 
@@ -54,6 +64,8 @@ body {
 .nav-link2 {
   color: black !important;
   text-decoration: none;
+  font-family: 'Skranji', cursive;
+  font-size: 1.5rem !important;
 }
 
 .navbar-brand {
@@ -65,7 +77,23 @@ body {
 }
 
 .navbar-nav {
-  align-items: center;
+  margin-left: auto;
+  align-items: center;  
+}
+
+.navbar-nav a:hover {
+  color: red !important;
+  transition: color 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-nav {
+    background-color: white;
+  }
+}
+  
+.navbar-collapse {
+  
 }
 
 .MuiCardContent-root {
@@ -74,4 +102,112 @@ body {
 
 .card-media {
   
+}
+
+
+/* Homepage styles */
+
+.inline-logos {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 5vh;
+}
+
+.yt-card {
+  height: 25rem;
+}
+
+.yt-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow: visible;
+}
+
+.yt-card-title {
+  font-weight: bold !important;
+  margin-left: 10rem; 
+}
+
+
+
+
+
+
+/* Meet The Team styles */
+
+.member-card-media {
+  display: flex;
+  height: 15vw;
+  width: 90%;
+  margin: 10;
+  border-radius: 60px !important;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2.5vh;
+}
+
+.member-card-media:hover .MuiCardMedia-img {
+  transform: scale(1.1);
+  transition: transform 0.5s ease-in-out;
+  box-shadow: -2px 10px 20px 0.5rem red;
+}
+
+.member-card-content {
+  width: 100%;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.membercard-about-bg {
+  font-size: 1.1rem;
+  text-align: center;
+  font-family: 'sans-serif';
+  font-weight: bold;
+}
+
+.MuiCardMedia-img {
+  width: 12rem !important;
+  
+}
+
+.membercard-icons {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.membercard-divider {
+  width: 30%;
+  margin: auto;
+  color: lightgrey;
+}
+
+/* .MuiCardMedia-img:hover {
+  transform: scale(1.1);
+  transition: transform 0.5s ease-in-out;
+  box-shadow: -2px 10px 20px 0.5rem red;
+} */
+
+
+
+/* Footer Styles */
+/*footer container with a dark style*/
+.footer-container {
+  background-color: #282c34;
+  color: white;
+  box-shadow: 1px 0px 0px 1px grey;
+  margin-top: 10vh;
+  height: 20vh;
+  text-align: center;
+}
+
+.footer-header {
+  font-family: 'Skranji', cursive;
+  font-size: 2.5rem;
+  margin-top: 5vh;
 }

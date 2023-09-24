@@ -39,7 +39,7 @@ const teamMembers = [
     twitter: "",
     instagram: "",
     thread: "",
-    image: "coral pic.jpg"
+    image: "babysatan.jpg"
 },
 {
     uname: "impulsed3lta",
@@ -57,9 +57,9 @@ const teamMembers = [
     tiktok: "tiktok.com/@madamstormy",
     facebook: "",
     twitter: "https://twitter.com/MadamStormy",
-    instagram: "https://instagram.com/madam_stormy?igshid=MmIzYWVlNDQ5Yg==",
+    instagram: "",
     thread: "",
-    image: "adara pic 2.jpg"
+    image: "madamstormy.jpg"
 },
 {
     uname: "xRiderrr",
@@ -73,18 +73,18 @@ const teamMembers = [
 },
 {
     uname: "SifuHotSauce",
-    about: "These are always awkward for me but here goes. Yo it’s ya boy Sifu Hotsauce aka Sifu Hotsizzle aka aka aka Brown Lightening. Halo, Rocket League, and Smash Bros power my gaming engine but I will play anything with the right peeps. I stay busy usually keeping my hand in a lil bit of everything because life is too short and my idle mind is a scary place. Saitama OP af but he’s probably the sum total of my vibe.",
-    tiktok: " ",
+    about: "Anywhere from charmingly awkward to just awkward depending on the vibes. I’m still relatively new to anime and most of nerd culture (nerds used to get beat up in my formative years) but I’m owning tf out of it now. Still too fresh to call a favorite just yet but I fw One Punch, Demon Slayer, Hunter Hunter, Black Clover, damn er’thang it seem like right? Make me laugh.",
+    tiktok: "",
     facebook: "",
     twitter: "",
     instagram: "",
     thread: "",
-    image: "dvonte pic 3.jpg"
+    image: "sifupic.jpg"
 },
 {
     uname: "DarkSkyWalker",
     about: "All right let's do this one last time.  I'm Sky walker 🙏 .  I'm into ANIME and MOVIEs.  Quickest way to become friends with me is to quote a movie. Need a 3rd on your Apex Squad, im your guy. Just know that you're not the Main character. I AM 😈 Want to talk metaphysics or philosophy, let's talk.  Negative vibes? We don't do that here.  Be respectful and remember....The force is always with you.",
-    tiktok: " ",
+    tiktok: "",
     facebook: "",
     twitter: "",
     instagram: "",

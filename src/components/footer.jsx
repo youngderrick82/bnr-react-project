@@ -2,13 +2,13 @@
 
 function Footer() {
     return (
+        <div className="footer-container">
         <div>
-        <div>
-            <h1>This is just text to be honest</h1>
-            <span>2023 .</span>
+            <h1 className="footer-header">This is just text to be honest</h1>
+            <span>Black Nerd Rises, LLC 2023 .</span>
         </div>
         <div>
-            <span>Powered by Pine-sol Baby</span>
+            <span>Powered by Sol-Pine Baby</span>
         </div>
         </div>
         

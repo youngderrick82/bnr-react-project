@@ -6,45 +6,91 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import { createTheme } from '@mui/material/styles';
 import { Tiktok } from "react-bootstrap-icons";
 import { Card, CardContent, CardMedia, IconButton, Typography } from "@material-ui/core";
+import { useEffect, useState } from "react";
 
 
 const MemberCards = (props) => {
-    const { uname, about, tiktok, facebook, twitter, instagram, thread, image } = props.data;
+    const { uname, about, tiktok, twitter, instagram, thread, image } = props.data;
     
+
+
+    const checkSocials = (social) => {
+        if (tiktok === "") {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+
+
+    const cardStyle = {
+        display: 'flex',
+        height: '15vw',
+        width: '90%',
+        margin: 10,
+        borderRadius: 20,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+    }
+
+    const cardMediaStyle = {
+        width: '25%',
+    }
+
+    const instagramButton = <IconButton href={instagram} target="_blank" aria-label={uname + " Instagram Link"}>
+    <InstagramIcon />
+    </IconButton>
+        
+    const twitterButton = <IconButton href={twitter} target="_blank" aria-label={uname + " Twitter Link"} style={{color: "#90caf9"}}>
+    <TwitterIcon />
+    </IconButton>
+
+    const tiktokButton = <IconButton href={tiktok} target="_blank" aria-label={uname + " Tiktok Link"} style={{color: "black"}}>
+        <Tiktok />
+    </IconButton>
+
+    const showInstagram = instagram !== "" ? instagramButton : null;
+    const showTwitter = twitter !== "" ? twitterButton : null;
+    const showTiktok = tiktok !== "" ? tiktokButton : null;
+
     return (
         <Container>
-            <Card raised='true' style={{ display: 'flex', height: 'auto', width: '90%', margin: 10, borderRadius: 30, marginLeft: 'auto', marginRight: 'auto' }}>
-                
+            <Card className="member-card-media" raised='true'>
                 <CardMedia
-                className="card-media"
+                className=""
                 component="img"
                 alt={uname}
-                height='300'
-                style={{ width: '25%' }}
-                image={require(`../pages/assets/${image}`)}
+                height="auto"
+                style={cardMediaStyle}
+                image={require(`../pages/assets/members/${image}`)}
                  />
                 <CardContent 
-                style={{ width: '100%'}}
+                className="member-card-content"
                 height="100%"
                 >
-                <Typography  variant='h3' sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
+                <Typography  variant='h3' 
+                style={{ 
+                    fontSize: 40, 
+                    textAlign: "center", 
+                    fontWeight: 'bold',
+                    fontFamily: 'Montserrat'
+                    }} 
+                    color= 'initial' gutterBottom>
                     {uname}
                 </Typography>
-                <Typography sx={{ fontSize: 24 }} color="text.secondary" gutterBottom>
+                <hr className="membercard-divider"/>
+                <div className="membercard-about-bg">
+                <Typography color="text.secondary" gutterBottom>
                     {about}
                 </Typography>
-                <IconButton href={facebook} target="_blank" aria-label={uname + " Facebook Link"} color="primary">
-                    <FacebookOutlinedIcon />
-                </IconButton>
-                <IconButton href={instagram} target="_blank" aria-label={uname + " Instagram Link"}>
-                    <InstagramIcon />
-                </IconButton>
-                <IconButton href={twitter} target="_blank" aria-label={uname + " Twitter Link"} style={{color: "#90caf9"}}>
-                    <TwitterIcon />
-                </IconButton>
-                <IconButton>
-                    <Tiktok href={tiktok} target="_blank" aria-label={uname + " Tiktok Link"} style={{color: "black"}} />
-                </IconButton>
+                </div>
+                <hr className="membercard-divider" />
+                <div className="membercard-icons">
+                {showInstagram}
+                {showTwitter}
+                {showTiktok}
+                </div>
                 </CardContent>
                
             </Card>

@@ -7,14 +7,14 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <Navbar collapseOnSelect expand="lg" className="bg-dark .bg-gradient">
-      <Container fluid>
+    <Navbar collapseOnSelect expand="lg" className="">
+      <Container fluid className="d-flex justify-content-between">
         <LinkContainer className="navbar-brand" to={"/"}>
           <Navbar.Brand>Black Nerd Rises</Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto text-white">
+          <Nav spacing="" className="">
             <LinkContainer className="nav-link" to={"/"}>
               <Nav.Link>Home</Nav.Link>
             </LinkContainer>
