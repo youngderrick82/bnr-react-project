@@ -1,28 +1,37 @@
 import React from "react";
 import Calendar from "@ericz1803/react-google-calendar";
-import { css } from "@emotion/react";
 
-const API_KEY = "AIzaSyDQNo4Q12xmi9Rw9O8lMVo2l56y1473Lds";
+const calendarAPI = process.env.REACT_APP_GCAL_API_KEY;
+const calendarID = process.env.REACT_APP_GCAL_ID;
 let calendars = [
   {
-    calendarId: "youngderrick82@gmail.com",
-    color: "#B241D1",
+    calendarId: calendarID,
   }, //add a color field to specify the color of a calendar
 ];
 
 let styles = {
   //you can use object styles (no import required)
   calendar: {
-    borderWidth: "10px",
-    borderColor: "rgb(33, 37, 41)" //make outer edge of calendar thicker
+    color: "black", //set the font color
+    borderColor: "white", //make outer edge of calendar thicker
+    margin: "auto",
+    maxWidth: "1200px"
   },
 
+
   //you can also use emotion's string styles
-  today: css`
-    /* highlight today by making the text red and giving it a red border */
-    color: red;
-    border: 3px solid red;
-  `,
+  today: {
+    color: "red",
+    border: "3px solid red !important",
+  },
+
+  event: {
+    visibility: "visible",
+  },
+
+  //you can use media queries to change the way your calendar looks at different screen sizes
+  //if you don't provide styles for a view, it will default to the view you provided it for
+ 
 };
 
 const language = "EN";
@@ -30,14 +39,13 @@ const language = "EN";
 const EventCalendar = () => {
 
     return (
-        <div>
+        <>
           <Calendar
-            apiKey={API_KEY}
+            apiKey={calendarAPI}
             calendars={calendars}
             styles={styles}
-            language={language}
           />
-        </div>
+        </>
       );
     }
 

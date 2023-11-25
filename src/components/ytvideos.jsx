@@ -10,45 +10,47 @@ import {
   Typography,
 } from "@material-ui/core";
 
-let nextPageToken = "";
-function getVideos() {
-  fetch(
-    "https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UC2ZgT5OJZvH4rogFojlEksA&maxResults=3&order=date&key=%20AIzaSyBhy4QSDgpDgUxGW5GAyVC3Re47y4Q8yEI&pageToken=" +
-      nextPageToken
-  )
-    .then((result) => {
-      return result.json();
-    })
-    .then((data) => {
-      let videos = data.items;
-      nextPageToken = data.nextPageToken;
-      let videoContainer = document.querySelector(".youtube-container");
-      for (videos of videos) {
-        videoContainer.innerHTML += `
-            <div class='video-item'>
-            <a href='https://www.youtube.com/watch?v=${videos.id.videoId}_channel=BlackNerdRises'>
-            <h2 alt='${videos.snippet.title}'>${videos.snippet.title}</h2>
-            <img src='${videos.snippet.thumbnails.medium.url}'>
-            </a>
-            </div>
-        `;
-      }
-    });
-}
+// let nextPageToken = "";
+// function getVideos() {
+//   fetch(
+//     "https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UC2ZgT5OJZvH4rogFojlEksA&maxResults=3&order=date&key=%20AIzaSyBhy4QSDgpDgUxGW5GAyVC3Re47y4Q8yEI&pageToken=" +
+//       nextPageToken
+//   )
+//     .then((result) => {
+//       return result.json();
+//     })
+//     .then((data) => {
+//       let videos = data.items;
+//       nextPageToken = data.nextPageToken;
+//       let videoContainer = document.querySelector(".youtube-container");
+//       for (videos of videos) {
+//         videoContainer.innerHTML += `
+//             <div class='video-item'>
+//             <a href='https://www.youtube.com/watch?v=${videos.id.videoId}_channel=BlackNerdRises'>
+//             <h2 alt='${videos.snippet.title}'>${videos.snippet.title}</h2>
+//             <img src='${videos.snippet.thumbnails.medium.url}'>
+//             </a>
+//             </div>
+//         `;
+//       }
+//     });
+// }
+
+const youtubeAPI = process.env.REACT_APP_YT_API_KEY;
 
 const VideoCards = () => {
   const [videos, setVideos] = useState([]);
 
   const fetchVideoData = () => {
-    fetch(
-      "https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UC2ZgT5OJZvH4rogFojlEksA&maxResults=3&order=date&key=AIzaSyBhy4QSDgpDgUxGW5GAyVC3Re47y4Q8yEI"
-    )
+    fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UC2ZgT5OJZvH4rogFojlEksA&maxResults=3&order=date&key=${youtubeAPI}`)
       .then((response) => {
         return response.json();
       })
       .then((data) => {
         setVideos(data.items);
       });
+
+      console.log(videos)
   };
 
 
@@ -57,10 +59,10 @@ const VideoCards = () => {
   }, []);
 
   return (
-    <div style={{ marginTop: 5 }}>
+    <div style={{ marginTop: 5, width: "100%" }}>
       <Grid container spacing={3}>
         {videos.map((video) => (
-          <Grid item xs={4}>
+          <Grid item xs={4} key={video.id.videoId}>
             <Card className="yt-card" raised="true" sx={{ maxWidth: 345,}}>
               <CardMedia
                 style={{ height: '14rem', width: "100%" }}

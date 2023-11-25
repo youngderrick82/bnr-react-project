@@ -14,6 +14,7 @@ import OnDemand from "./pages/ondemand";
 import HomePage from "./pages/home";
 import Header from "./components/header";
 import Footer from "./components/footer";
+import Waitlist from "./pages/waitlist";
 
 
 function Layout() {
@@ -56,12 +57,18 @@ const router = createBrowserRouter([
         path: "pages/ondemand",
         element: <OnDemand />,
       },
+      {
+        path: "pages/merch",
+        element: <Waitlist />
+      },
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <RouterProvider router={router}>
+      <Layout />
+    </RouterProvider>
   </React.StrictMode>
 );
