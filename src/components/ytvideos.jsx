@@ -8,7 +8,7 @@ import {
   Container,
   Grid,
   Typography,
-} from "@material-ui/core";
+} from "@mui/material";
 
 // let nextPageToken = "";
 // function getVideos() {
@@ -80,7 +80,7 @@ const VideoCards = () => {
                 }
                 </Typography>
                 <CardActions>
-                  <Button  color="secondary" variant="contained" target="_blank" href={'https://www.youtube.com/watch?v=' + video.id.videoId + '_channel=BlackNerdRises'} size="large">Watch On Youtube</Button>
+                  <Button  color="primary" variant="contained" target="_blank" href={'https://www.youtube.com/watch?v=' + video.id.videoId + '_channel=BlackNerdRises'} size="large">Watch On Youtube</Button>
                   {/* <Button size="small">Share</Button> */}
                 </CardActions>
               </CardContent>

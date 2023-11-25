@@ -5,7 +5,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import { createTheme } from '@mui/material/styles';
 import { Tiktok } from "react-bootstrap-icons";
-import { Card, CardContent, CardMedia, IconButton, Typography } from "@material-ui/core";
+import { Card, CardContent, CardMedia, IconButton, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 
 

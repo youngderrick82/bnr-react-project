@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Paper } from '@material-ui/core';
+import { Paper } from '@mui/material';
 
 const Waitlist = () => {
   
