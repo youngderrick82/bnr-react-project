@@ -19,6 +19,7 @@ import VideoCards from "../components/ytvideos";
 import SlideShow from "../components/slideshow";
 import Carousel from "../components/carousel";
 import { useEffect } from "react";
+import BannerCarousel from "../components/carousel";
 
 
 const HomePage = () => {
@@ -32,12 +33,8 @@ const HomePage = () => {
     <div>
     <Container maxWidth="xl">
       <Grid container>
-        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-            {/* <img src={bnrLogo} alt="Black Nerd Rises Logo" style={{ width: "100%", height: "50rem" }} /> */}
-            {SlideShow}
-          </Grid>
-          <Carousel />
-          <Grid item xs={12} sm={12} md={12} lg={12} xl={12} class="inline-logos">
+        <BannerCarousel />      
+          <Grid item xs={12} sm={12} md={12} lg={12} xl={12} className="inline-logos">
             <a href="https://www.youtube.com/@blacknerdrises" target="_blank" rel="noreferrer" style={{ width: "100%"}}>
               <img src={YoutubeLogo} title="Black Nerd Rises Youtube" alt="Black Nerd Rises Youtube" style={{ width: "100%"}} />
             </a>

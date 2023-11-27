@@ -16,9 +16,9 @@ function Header() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav spacing="" className="">
-            <LinkContainer className="nav-link" to={"/"}>
+            {/* <LinkContainer className="nav-link" to={"/"}>
               <Nav.Link bsPrefix="nav-link">Home</Nav.Link>
-            </LinkContainer>
+            </LinkContainer> */}
             <LinkContainer to={"pages/events/"}>
               <Nav.Link bsPrefix="nav-link">Schedule</Nav.Link>
             </LinkContainer>
@@ -40,7 +40,7 @@ function Header() {
             </LinkContainer>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">Streaming</Nav.Link>
+            {/* <Nav.Link className="stream-link" href="#deets">Streaming</Nav.Link> */}
           </Nav>
         </Navbar.Collapse>
       </Container>

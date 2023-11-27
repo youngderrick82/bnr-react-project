@@ -1,6 +1,5 @@
-import EventCalendar from "../components/calendar"
 import { useEffect } from "react";
-import { CSSObject } from '@emotion/react';
+import TwitchSchedule from "../components/twitchschedule";
 
 
 const Events = () => {
@@ -11,9 +10,9 @@ const Events = () => {
 
     return (
     <div>
-       <h1 className="page-header">Event Calendar</h1>
+       <h1 className="page-header">Black Nerd Rises Schedule</h1>
        <p style={{ textAlign: "center"}} className="page-subheader">Check out our upcoming events!</p>
-    <EventCalendar />
+      <TwitchSchedule />
     </div>
     )
 }

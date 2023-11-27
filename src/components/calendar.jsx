@@ -15,9 +15,8 @@ let styles = {
     color: "black", //set the font color
     borderColor: "white", //make outer edge of calendar thicker
     margin: "auto",
-    maxWidth: "1200px"
+    maxWidth: "1200px",
   },
-
 
   //you can also use emotion's string styles
   today: {
@@ -31,22 +30,16 @@ let styles = {
 
   //you can use media queries to change the way your calendar looks at different screen sizes
   //if you don't provide styles for a view, it will default to the view you provided it for
- 
 };
 
 const language = "EN";
 
 const EventCalendar = () => {
+  return (
+    <>
+      <Calendar apiKey={calendarAPI} calendars={calendars} styles={styles} />
+    </>
+  );
+};
 
-    return (
-        <>
-          <Calendar
-            apiKey={calendarAPI}
-            calendars={calendars}
-            styles={styles}
-          />
-        </>
-      );
-    }
-
-export default EventCalendar
+export default EventCalendar;

@@ -42,7 +42,7 @@ const teamMembers = [
     image: "babysatan.jpg"
 },
 {
-    uname: "impulsed3lta",
+    uname: "Impulsed3lta",
     about: "Sup with it. Impulsed3lta komin in with the introduction.  Right now I am getting back into the anime and gaming shtick after a hiatus.  Got an Xbox a lil bit ago amd I'm slowly showing it some more use.  Got a good rpg? Maybe I'll try it.  In terms of anime show me something underrated or shorter and I'll watch it and see for myself.  Anything else let me know.  I'm a pretty good background charakter",
     tiktok: "",
     facebook: "",
