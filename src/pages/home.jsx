@@ -33,19 +33,29 @@ const HomePage = () => {
     <div>
     <Container maxWidth="xl">
       <Grid container>
-        <BannerCarousel />      
-          <Grid item xs={12} sm={12} md={12} lg={12} xl={12} className="inline-logos">
+        <BannerCarousel />
+        <div>
+        <h1 className="page-header">Welcome to Black Nerd Rises!</h1>
+          <p className="home-message">Dive into a world where anime meets attitude, gaming gets a new groove, and every convention turns into an unforgettable experience. We're a diverse crew of anime aficionados, gaming gurus, and comic con conquerors, bringing you the best of nerd culture with a twist. Join us for epic game streams, laugh-out-loud panels, and a community where every nerd feels like a hero. Ready to level up your fandom? You're in the right place!</p>
+          </div>
+          <Grid item xs={12} sm={4} md={4} lg={4} xl={4} className="inline-logos">
             <a href="https://www.youtube.com/@blacknerdrises" target="_blank" rel="noreferrer" style={{ width: "100%"}}>
               <img src={YoutubeLogo} title="Black Nerd Rises Youtube" alt="Black Nerd Rises Youtube" style={{ width: "100%"}} />
             </a>
+            </Grid>
+            <Grid item xs={12} sm={4} md={4} lg={4} xl={4} className="inline-logos">
             <a href="https://awa-con.com/" target="_blank" rel="noreferrer" style={{ width: "100%"}}>
             <img src={AwaLogo} title="Anime Weekend Atlanta " alt="Anime Weekend Atlanta" style={{ width: "100%"}} />
             </a>
+            </Grid>
+            <Grid item xs={12} sm={4} md={4} lg={4} xl={4} className="inline-logos">
             <a href="https://www.twitch.tv/blacknerdrises" target="_blank" rel="noreferrer" style={{ width: "100%"}}>
             <img src={TwitchLogo} title="Black Nerd Rises Twitch" alt="Black Nerd Rises Twitch" style={{ width: "100%"}} />
             </a>
           </Grid>
-        <VideoCards />
+          <div className="i-center">
+        {/* <VideoCards /> */}
+        </div>
       </Grid>
     </Container>
     </div>

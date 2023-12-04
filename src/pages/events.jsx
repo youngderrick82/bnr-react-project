@@ -11,7 +11,6 @@ const Events = () => {
     return (
     <div>
        <h1 className="page-header">Black Nerd Rises Schedule</h1>
-       <p style={{ textAlign: "center"}} className="page-subheader">Check out our upcoming events!</p>
       <TwitchSchedule />
     </div>
     )

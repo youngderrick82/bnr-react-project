@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, CardContent, Typography, Grid } from "@mui/material";
+import { Card, CardContent, Typography, Grid, Box } from "@mui/material";
 import axios from "axios";
 
 const twitchBcId = process.env.REACT_APP_TTV_BC_ID;
@@ -79,13 +79,13 @@ const TwitchSchedule = () => {
     }
   };
 
+  const processedTitles = new Set();
+
   useEffect(() => {
     fetchToken();
   }, []);
 
   useEffect(() => {
-    console.log("Token:", token);
-    console.log("Broadcaster ID:", twitchBcId);
     if (token) {
       fetchTwitchSchedule();
     }
@@ -125,29 +125,50 @@ const TwitchSchedule = () => {
       {Object.entries(daysOfWeek).map(([day, segments]) => {
         if (segments.length > 0) {
           return (
-            <div key={day}>
-              <h3>{day}</h3>
-              <Grid container spacing={2}>
-                {segments.map((segment, index) => (
-                  <Grid item xs={12} sm={6} md={4} key={index}>
-                    <Card>
-                      <CardContent>
-                        <Typography variant="h5" component="div">
-                          {segment.title}
-                        </Typography>
-                        <Typography variant="h6" component="div">
-                          {segment.category.name}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                          {` ${new Date(segment.start_time).toLocaleString()}`}
-                        </Typography>
-                        {/* Additional details can be added here */}
-                      </CardContent>
-                    </Card>
-                  </Grid>
-                ))}
-              </Grid>
-            </div>
+            <Box className="stream-box">
+              <div className="stream-day-schedule-container" key={day}>
+                <h3 className="stream-day f-lg">{day}: </h3>
+                <Grid className="stream-item-container" container spacing={2}>
+                  {segments.map((segment) => {
+                    if (!processedTitles.has(segment.title)) {
+                      processedTitles.add(segment.title);
+                      return (
+                        <Grid item xs={12} sm={6} md={4} key={segment.id}>
+                          <Card className="stream-item">
+                            <CardContent>
+                              <Typography
+                                className="stream-title"
+                                variant="h5"
+                                component="div"
+                              >
+                                {segment.title}
+                              </Typography>
+                              <Typography
+                                className="stream-game"
+                                variant="h6"
+                                component="div"
+                              >
+                                {segment.category.name}
+                              </Typography>
+                              <Typography
+                                className="stream-time"
+                                variant="body2"
+                                color="text.secondary"
+                              >
+                                {`Next: ${new Date(
+                                  segment.start_time
+                                ).toLocaleString()}`}
+                              </Typography>
+                              {/* Additional details can be added here */}
+                            </CardContent>
+                          </Card>
+                        </Grid>
+                      );
+                    }
+                  })}
+                </Grid>
+              </div>
+            </Box>
           );
         } else {
           return null;

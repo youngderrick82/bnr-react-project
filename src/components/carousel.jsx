@@ -1,14 +1,18 @@
 import React, { useRef, useEffect } from "react";
 import { register } from "swiper/element/bundle";
 import { Grid } from "@mui/material";
-import "swiper/css";
-import Slideshow1 from "../pages/assets/banner-images/merch-image.png";
-import Slideshow2 from "../pages/assets/banner-images/merch-image2.png";
-import Slideshow3 from "../pages/assets/banner-images/rbanner-image.png";
-import Slideshow4 from "../pages/assets/banner-images/rbanner-image2.png";
+import "swiper/css/bundle";
+import Slideshow1 from "../pages/assets/banner-images/group-photo-transformed.jpeg";
+import Slideshow2 from "../pages/assets/banner-images/Experience the Saga top.png";
+import Slideshow3 from "../pages/assets/banner-images/interview-photo.png";
+import Slideshow4 from "../pages/assets/banner-images/Merch Coming Sooon.png";
 
 const BannerCarousel = () => {
   const swiperElRef = useRef(null);
+  const ap = {
+    delay: 1,
+    disableOnInteraction: false
+  }
 
   useEffect(() => {
     register();
@@ -20,20 +24,23 @@ const BannerCarousel = () => {
           ref={swiperElRef}
           slides-per-view="1"
           loop="true"
-          speed="500"
+          speed="400"
           navigation="true"
           pagination="true"
-          autoplay={{delay: 1, disableOnInteraction: false}}
+          autoplay={ap}
           className="banner-carousel"
         >
           <swiper-slide>
-            <img src={Slideshow1} alt="Banner 1" />
+            <img src={Slideshow1} width="100%" height="100%" alt="Group Spider-Man Cosplay" />
           </swiper-slide>
           <swiper-slide>
-            <img src={Slideshow2} alt="Banner 1" />
+            <img src={Slideshow2} width="100%" height="100%" alt="Experience the Sage: Live the Anime Revolution with Black Nerd Rises" />
           </swiper-slide>
           <swiper-slide>
-            <img src={Slideshow3} alt="Banner 1" />
+            <img src={Slideshow3} width="100%" height="100%" alt="Dark Skywalker interviewing con-goer" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src={Slideshow4} width="100%" height="100%" alt="Get Ready: Exclusive Merch Launching Soon!" />
           </swiper-slide>
           {/* Add more <swiper-slide> elements for additional banners */}
         </swiper-container>

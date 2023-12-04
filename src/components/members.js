@@ -42,7 +42,7 @@ const teamMembers = [
     image: "babysatan.jpg"
 },
 {
-    uname: "Impulsed3lta",
+    uname: "Impulse D3lta",
     about: "Sup with it. Impulsed3lta komin in with the introduction.  Right now I am getting back into the anime and gaming shtick after a hiatus.  Got an Xbox a lil bit ago amd I'm slowly showing it some more use.  Got a good rpg? Maybe I'll try it.  In terms of anime show me something underrated or shorter and I'll watch it and see for myself.  Anything else let me know.  I'm a pretty good background charakter",
     tiktok: "",
     facebook: "",
@@ -52,7 +52,7 @@ const teamMembers = [
     image: "zane pic 3.jpg"
 },
 {
-    uname: "MadamStormy",
+    uname: "Madam Stormy",
     about: "I’m a gamer that loves anime! Awkward at first but I can talk after a while. My favorite game series is the Bioshock series. I play all of them every year around Halloween. I love horror games and movies. My favorite anime is SpyxFamily",
     tiktok: "tiktok.com/@madamstormy",
     facebook: "",
@@ -63,7 +63,7 @@ const teamMembers = [
 },
 {
     uname: "xRiderrr",
-    about: "",
+    about: "What's up, I'm xRiderrr, a seasoned gamer, anime spectator, board game enthusiast, and TCG indulgent. I enjoy FPS and RPG games such as Apex, Elder Scrolls, and RB6 Siege. My favorite anime of all time (at this time) is Code Geass. I'm always trying to learn something new. I enjoy instigating, proper roast sessions, long walks on the beach, playing music, and fist-fighting geese.",
     tiktok: "",
     facebook: "",
     twitter: "",
@@ -72,7 +72,7 @@ const teamMembers = [
     image: "derrick pic.jpg"
 },
 {
-    uname: "SifuHotSauce",
+    uname: "Sifu HotSauce",
     about: "Anywhere from charmingly awkward to just awkward depending on the vibes. I’m still relatively new to anime and most of nerd culture (nerds used to get beat up in my formative years) but I’m owning tf out of it now. Still too fresh to call a favorite just yet but I fw One Punch, Demon Slayer, Hunter Hunter, Black Clover, damn er’thang it seem like right? Make me laugh.",
     tiktok: "",
     facebook: "",
@@ -82,7 +82,7 @@ const teamMembers = [
     image: "sifupic.jpg"
 },
 {
-    uname: "DarkSkyWalker",
+    uname: "Dark SkyWalker",
     about: "All right let's do this one last time.  I'm Sky walker 🙏 .  I'm into ANIME and MOVIEs.  Quickest way to become friends with me is to quote a movie. Need a 3rd on your Apex Squad, im your guy. Just know that you're not the Main character. I AM 😈 Want to talk metaphysics or philosophy, let's talk.  Negative vibes? We don't do that here.  Be respectful and remember....The force is always with you.",
     tiktok: "",
     facebook: "",
@@ -92,6 +92,6 @@ const teamMembers = [
     image: "jason pic.jpg"
 },
 
-]
+];
 
 export default teamMembers

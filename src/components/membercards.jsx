@@ -38,6 +38,10 @@ const MemberCards = (props) => {
         width: '25%',
     }
 
+
+
+    /* Future code for when team members have public facing Social Media
+    
     const instagramButton = <IconButton href={instagram} target="_blank" aria-label={uname + " Instagram Link"}>
     <InstagramIcon />
     </IconButton>
@@ -52,7 +56,7 @@ const MemberCards = (props) => {
 
     const showInstagram = instagram !== "" ? instagramButton : null;
     const showTwitter = twitter !== "" ? twitterButton : null;
-    const showTiktok = tiktok !== "" ? tiktokButton : null;
+    const showTiktok = tiktok !== "" ? tiktokButton : null; */
 
     return (
         <Container>
@@ -72,7 +76,7 @@ const MemberCards = (props) => {
                 <Typography  variant='h3' 
                 style={{ 
                     fontSize: 40, 
-                    textAlign: "center", 
+                    textAlign: 'center', 
                     fontWeight: 'bold',
                     fontFamily: 'Montserrat'
                     }} 
@@ -87,9 +91,6 @@ const MemberCards = (props) => {
                 </div>
                 <hr className="membercard-divider" />
                 <div className="membercard-icons">
-                {showInstagram}
-                {showTwitter}
-                {showTiktok}
                 </div>
                 </CardContent>
                

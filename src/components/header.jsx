@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -5,17 +6,95 @@ import NavLink from "react-bootstrap/NavLink";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { LinkContainer } from "react-router-bootstrap";
 import { Link } from "react-router-dom";
+import Lottie from "lottie-react";
+import flameAnimation from "../pages/assets/flame-animation.json";
+import axios from "axios";
 
 function Header() {
+  const [isLive, setIsLive] = useState(false);
+  const [token, setToken] = useState("");
+
+  const options = {
+    animationData: flameAnimation,
+    loop: true,
+  };
+
+  const fetchToken = async () => {
+    try {
+      const response = await axios.get(
+        "http://localhost:3001/get-twitch-token"
+      );
+      console.log("Fetched token:", response.data.access_token);
+      setToken(response.data.access_token);
+    } catch (error) {
+      console.error("Error fetching Twitch token:", error);
+    }
+  };
+
+  const fetchLiveStatus = () => {
+    fetch("https://api.twitch.tv/helix/streams?user_login=blacknerdrises", {
+      headers: {
+        "Client-ID": process.env.REACT_APP_TTV_CLIENT_ID,
+        Authorization: `Bearer ${token}`,
+        Accept: "*/*",
+      },
+    })
+      .then((res) => {
+        console.log(res.json);
+        return res.json();
+      })
+      .then((d) => {
+        if (!d.data == []) {
+          console.log(d.data);
+          setIsLive(false);
+        } else {
+          setIsLive(true);
+        }
+      });
+  };
+
+  const streamIndicator = () => {
+    return isLive ? (
+      <Nav className="stream-link">
+        <LinkContainer
+          className="stream-link-text"
+          to={"https://www.twitch.tv/blacknerdrises"}
+        >
+          <Nav.Link className="stream-live">STREAMING</Nav.Link>
+        </LinkContainer>
+        {/* <Lottie
+          className="flame-animation"
+          animationData={flameAnimation}
+          loop={true}
+        />
+        <div className="flame-animation-box"></div> */}
+      </Nav>
+    ) : (
+      <Nav className="stream-link">
+        <Nav.Link className="stream-not-live">STREAMING</Nav.Link>
+      </Nav>
+    );
+  };
+
+  useEffect(() => {
+    fetchToken();
+  }, []);
+
+  useEffect(() => {
+    if (token) {
+      fetchLiveStatus();
+    }
+  }, [token]);
+
   return (
     <Navbar collapseOnSelect expand="lg" className="">
       <Container fluid className="d-flex justify-content-between">
-        <LinkContainer className="navbar-brand" to={"/"}>
+        <LinkContainer className="" to={"/"}>
           <Navbar.Brand>Black Nerd Rises</Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav spacing="" className="">
+          <Nav spacing="" className="main-nav-links">
             {/* <LinkContainer className="nav-link" to={"/"}>
               <Nav.Link bsPrefix="nav-link">Home</Nav.Link>
             </LinkContainer> */}
@@ -23,13 +102,20 @@ function Header() {
               <Nav.Link bsPrefix="nav-link">Schedule</Nav.Link>
             </LinkContainer>
             <NavDropdown
-              eventKey={3}
               className="nav-link"
               title="About Us"
               id="collapsible-nav-dropdown"
+            >
+              <Nav.Link
+                className="nav-link2 navbar-collapse"
+                as={Link}
+                to={"pages/team/"}
               >
-             <NavDropdown.Item className="nav-link2 navbar-collapse" as={Link} eventKey={3.1} to={"pages/team/"}>Meet the Team</NavDropdown.Item>
-              <Nav.Link className="nav-link2 navbar-collapse" as={Link} eventKey={3.2} to={""}>Contact Us</Nav.Link>    
+                Meet the Team
+              </Nav.Link>
+              <Nav.Link className="nav-link2 navbar-collapse" as={Link} to={""}>
+                Contact Us
+              </Nav.Link>
               {/* <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">
               Separated link
@@ -39,9 +125,8 @@ function Header() {
               <Nav.Link>Merch</Nav.Link>
             </LinkContainer>
           </Nav>
-          <Nav>
-            {/* <Nav.Link className="stream-link" href="#deets">Streaming</Nav.Link> */}
-          </Nav>
+          {streamIndicator()}
+          {/* <Nav.Link className="stream-link" href="#deets">Streaming</Nav.Link> */}
         </Navbar.Collapse>
       </Container>
     </Navbar>

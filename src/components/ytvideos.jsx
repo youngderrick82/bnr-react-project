@@ -59,7 +59,7 @@ const VideoCards = () => {
   }, []);
 
   return (
-    <div style={{ marginTop: 5, width: "100%" }}>
+    <div className="i-center" style={{ marginTop: 5, width: "100%" }}>
       <Grid container spacing={3}>
         {videos.map((video) => (
           <Grid item xs={4} key={video.id.videoId}>
