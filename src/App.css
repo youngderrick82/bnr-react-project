@@ -287,7 +287,6 @@ body {
 .nav-link {
   color: #a83940 !important;
   font-family: testTest, cursive;
-  font-size: 3rem !important;
   margin: 0 15px;
   /* -webkit-text-stroke: 1.5px black; */
 }
@@ -328,14 +327,11 @@ body {
   margin: none;
   align-items: center;
   justify-content: space-between;
+  font-size: 3.0vw !important;
 }
 
 .main-nav-links {
   margin: auto;
-}
-
-.stream-live {
-  font-size: 1.0vw !important;
 }
 
 .stream-not-live {
