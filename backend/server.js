@@ -9,6 +9,8 @@ app.use(
     origin: "http://localhost:3000",
   })
 );
+
+app.set("trust proxy", true);
 const PORT = 3001;
 
 const TWITCH_CLIENT_ID = process.env.TTV_CLIENT_ID;
