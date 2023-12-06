@@ -113,7 +113,7 @@ function Header() {
               >
                 Meet the Team
               </Nav.Link>
-              <Nav.Link className="nav-link2 navbar-collapse" as={Link} to={""}>
+              <Nav.Link className="nav-link2 navbar-collapse" as={Link} to={"pages/contactus/"}>
                 Contact Us
               </Nav.Link>
               {/* <NavDropdown.Divider />

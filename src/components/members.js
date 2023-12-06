@@ -52,6 +52,16 @@ const teamMembers = [
     image: "zane pic 3.jpg"
 },
 {
+    uname: "Eman4realz",
+    about: "Yooo it's ya boi Eman4realz I'm in on most all manga anime but on the top of that list 'guilty crown' by far my favorite, but dont get mislead my the nerdy side I'm a hooper and I will dunk on you in any given opportunity. I'm on every platform except Xbox(mainly PC) league of legends what I be playing on there and Tekken is all time favorite game and nobody want that smoke 😎",
+    tiktok: "",
+    facebook: "",
+    twitter: "",
+    instagram: "",
+    thread: "",
+    image: "eman.jpg"
+},
+{
     uname: "Madam Stormy",
     about: "I’m a gamer that loves anime! Awkward at first but I can talk after a while. My favorite game series is the Bioshock series. I play all of them every year around Halloween. I love horror games and movies. My favorite anime is SpyxFamily",
     tiktok: "tiktok.com/@madamstormy",
@@ -80,6 +90,16 @@ const teamMembers = [
     instagram: "",
     thread: "",
     image: "sifupic.jpg"
+},
+{
+    uname: "phatfu",
+    about: "Phatfu = cats😸, plants🌵, coffee☕️. I’m the coolest crazy cat lady you’ll ever meet. ✌🏼Fairly new to the anime scene but have enjoyed: Cowboy Bebop, Attack on Titan, Samurai Shamploo, Hunter x Hunter, Demon Slayer and Black Clover. Love to play co-op games or anything Zelda-related but, I’m a sucker for a good jump-scare game. Come and vibe!",
+    tiktok: "",
+    facebook: "",
+    twitter: "",
+    instagram: "",
+    thread: "",
+    image: "phatfu.jpg"
 },
 {
     uname: "Dark SkyWalker",

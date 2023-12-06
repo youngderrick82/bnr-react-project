@@ -324,9 +324,9 @@ body {
 }
 
 .navbar-nav {
-  margin: none;
+  margin: auto;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between !important;
   font-size: 3.0vw !important;
 }
 
@@ -594,7 +594,19 @@ swiper-pagination {
   z-index: 10000;
 }
 
-/* Meet The Team yles */
+/* Contact-us */
+
+.form-container {
+ 
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+}
+
+/* Meet The Team */
 
 .container {
   margin-bottom: 2.5vh;

@@ -10,8 +10,8 @@ function Footer() {
     document.body.appendChild(script);
 
     script.onload = () => {
-      window.fnames = new Array();
-      window.ftypes = new Array();
+      window.fnames = [];
+      window.ftypes = [];
       window.fnames[0] = "EMAIL";
       window.ftypes[0] = "email";
       // Add other fnames and ftypes here if needed

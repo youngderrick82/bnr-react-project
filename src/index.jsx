@@ -12,19 +12,19 @@ import About from "./pages/about";
 import MeetTeam from "./pages/team";
 import OnDemand from "./pages/ondemand";
 import HomePage from "./pages/home";
+import ContactUs from "./pages/contactus";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Waitlist from "./pages/waitlist";
 
-
 function Layout() {
   return (
     <>
-    <Header />
-    <Outlet />
-    <Footer />
+      <Header />
+      <Outlet />
+      <Footer />
     </>
-  )
+  );
 }
 
 const router = createBrowserRouter([
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Root />
+        element: <Root />,
       },
       {
         index: true,
@@ -54,12 +54,16 @@ const router = createBrowserRouter([
         element: <MeetTeam />,
       },
       {
+        path: "pages/contactus",
+        element: <ContactUs />,
+      },
+      {
         path: "pages/ondemand",
         element: <OnDemand />,
       },
       {
         path: "pages/merch",
-        element: <Waitlist />
+        element: <Waitlist />,
       },
     ],
   },

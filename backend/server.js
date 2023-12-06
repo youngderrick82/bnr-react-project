@@ -33,7 +33,6 @@ const getToken = async () => {
       }
     );
 
-    console.log("token:", response.data.access_token);
     accessToken = response.data.access_token;
     const expiresIn = response.data.expires_in;
     tokenExpiry = Date.now() + expiresIn * 1000; // Convert to milliseconds
