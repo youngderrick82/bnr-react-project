@@ -71,7 +71,6 @@ const TwitchSchedule = () => {
   const fetchToken = async () => {
     try {
       const response = await axios.get(`${host}/get-twitch-token`);
-      console.log("Fetched token:", response.data.access_token);
       setToken(response.data.access_token);
     } catch (error) {
       console.error("Error fetching Twitch token:", error);
