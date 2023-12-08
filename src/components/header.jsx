@@ -7,7 +7,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { LinkContainer } from "react-router-bootstrap";
 import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
-import flameAnimation from "../pages/assets/flame-animation.json";
+import flameAnimation from "../pages/assets/Animation - 1701563940606.json";
 import axios from "axios";
 
 function Header() {
@@ -56,22 +56,17 @@ function Header() {
   const streamIndicator = () => {
     return isLive ? (
       <Nav className="stream-link">
-        <LinkContainer
-          className="stream-link-text"
-          to={"https://www.twitch.tv/blacknerdrises"}
+        <Nav.Link
+          className="stream-live"
+          target="_blank"
+          href="https://www.twitch.tv/blacknerdrises"
         >
-          <Nav.Link className="stream-live">STREAMING</Nav.Link>
-        </LinkContainer>
-        {/* <Lottie
-          className="flame-animation"
-          animationData={flameAnimation}
-          loop={true}
-        />
-        <div className="flame-animation-box"></div> */}
+          Live Now 
+        </Nav.Link>
       </Nav>
     ) : (
       <Nav className="stream-link">
-        <Nav.Link className="stream-not-live">STREAMING</Nav.Link>
+        <Nav.Link className="stream-not-live">Stream Offline</Nav.Link>
       </Nav>
     );
   };
@@ -113,7 +108,11 @@ function Header() {
               >
                 Meet the Team
               </Nav.Link>
-              <Nav.Link className="nav-link2 navbar-collapse" as={Link} to={"pages/contactus/"}>
+              <Nav.Link
+                className="nav-link2 navbar-collapse"
+                as={Link}
+                to={"pages/contactus/"}
+              >
                 Contact Us
               </Nav.Link>
               {/* <NavDropdown.Divider />

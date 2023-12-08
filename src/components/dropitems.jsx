@@ -10,6 +10,7 @@ const dropItems = {
       "Partnership and Collaboration Opportunities",
       "Press and Media Contact",
       "Volunteer and Community Involvement",
+      "Accessibility Questions / Issues"
     ],
 };
 

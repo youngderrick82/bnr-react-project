@@ -1,5 +1,14 @@
 import React, { useEffect } from "react";
 import { Grid } from "@mui/material";
+import {
+  faTwitch,
+  faSquareFacebook,
+  faTiktok,
+  faYoutube,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBackward } from "@fortawesome/free-solid-svg-icons";
 
 function Footer() {
   useEffect(() => {
@@ -37,18 +46,20 @@ function Footer() {
             item
           >
             <h3 className="footer-header">Quick Links</h3>
-            <a href="pages/events">
-              <p>Schedule</p>
-            </a>
-            <a href="pages/team">
-              <p>About the Team</p>
-            </a>
-            <a href="pages/contactus">
-              <p>Contact-Us</p>
-            </a>
-            <a href="pages/merch">
-              <p>Merch</p>
-            </a>
+            <ul className="footer-list">
+              <li>
+                <a href="pages/events">Schedule</a>
+              </li>
+              <li>
+                <a href="pages/team">About the Team</a>
+              </li>
+              <li>
+                <a href="pages/contactus">Contact-Us</a>
+              </li>
+              <li>
+                <a href="pages/merch">Merch</a>
+              </li>
+            </ul>
           </Grid>
           <Grid
             className="footer-about footer-items"
@@ -61,34 +72,50 @@ function Footer() {
           >
             <h3 className="footer-header">Connect with Us</h3>
             <ul className="footer-list">
-              <li>
-                <a>
-                  <span> Twitch</span>
+              <li className="footer-list-item">
+                <a target="_blank" href="https://www.twitch.tv/blacknerdrises">
+                  <span>
+                    {" "}
+                    <FontAwesomeIcon icon={faTwitch} /> Twitch
+                  </span>
                 </a>
               </li>
-              <li>
-                <a>
-                  <span> Youtube</span>
+              <li className="footer-list-item">
+                <a target="_blank" href="https://youtube.com/@blacknerdrises">
+                  <span>
+                    {" "}
+                    <FontAwesomeIcon icon={faYoutube} /> Youtube
+                  </span>
                 </a>
               </li>
-              <li>
-                <a>
-                  <span> Facebook</span>
+              <li className="footer-list-item">
+                <a target="_blank" href="https://tiktok.com/@blacknerdrises">
+                  <span>
+                    {" "}
+                    <FontAwesomeIcon icon={faTiktok} /> TikTok
+                  </span>
                 </a>
               </li>
-              <li>
-                <a>
-                  <span> Discord</span>
+              <li className="footer-list-item">
+                <a
+                  target="_blank"
+                  href="https://www.instagram.com/blacknerdrise/"
+                >
+                  <span>
+                    {" "}
+                    <FontAwesomeIcon icon={faInstagram} /> Instagram
+                  </span>
                 </a>
               </li>
-              <li>
-                <a>
-                  <span> Instagram</span>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <span> X</span>
+              <li className="footer-list-item">
+                <a
+                  target="_blank"
+                  href="https://www.facebook.com/blacknerdrises"
+                >
+                  <span>
+                    {" "}
+                    <FontAwesomeIcon icon={faSquareFacebook} /> Facebook
+                  </span>
                 </a>
               </li>
             </ul>

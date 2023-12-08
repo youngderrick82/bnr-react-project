@@ -14,7 +14,7 @@ import bnrLogo from "./assets/logo.jpg"
 import Logo from "./assets/logo.jpg";
 import TwitchLogo from "./assets/bnr-twitch-logo.png";
 import YoutubeLogo from "./assets/bnr-yt-logo2.png";
-import AwaLogo from "./assets/Anime_Weekend_Atlanta_Logo.png";
+import FistLogo from "./assets/lyfu-light.png";
 import VideoCards from "../components/ytvideos";
 import SlideShow from "../components/slideshow";
 import Carousel from "../components/carousel";
@@ -43,10 +43,8 @@ const HomePage = () => {
               <img src={YoutubeLogo} title="Black Nerd Rises Youtube" alt="Black Nerd Rises Youtube" style={{ width: "100%"}} />
             </a>
             </Grid>
-            <Grid item xs={12} sm={4} md={4} lg={4} xl={4} className="inline-logos">
-            <a href="https://awa-con.com/" target="_blank" rel="noreferrer" style={{ width: "100%"}}>
-            <img src={AwaLogo} title="Anime Weekend Atlanta " alt="Anime Weekend Atlanta" style={{ width: "100%"}} />
-            </a>
+            <Grid item xs={12} sm={4} md={4} lg={4} xl={4} className="inline-logos lyfu">
+            <img src={FistLogo} title="Nerd Gang for Lyfu" alt="Nerd Gang for Lyfu" style={{ width: "50%"}} />
             </Grid>
             <Grid item xs={12} sm={4} md={4} lg={4} xl={4} className="inline-logos">
             <a href="https://www.twitch.tv/blacknerdrises" target="_blank" rel="noreferrer" style={{ width: "100%"}}>
@@ -54,7 +52,7 @@ const HomePage = () => {
             </a>
           </Grid>
           <div className="i-center">
-        {/* <VideoCards /> */}
+        <VideoCards />
         </div>
       </Grid>
     </Container>

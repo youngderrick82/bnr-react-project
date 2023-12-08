@@ -38,7 +38,7 @@ const ContactForm = () => {
   const [formValues, setFormValues] = useState({
     name: "",
     email: "",
-    dropdown: "",
+    type: "",
     message: "",
   });
   const [formErrors, setFormErrors] = useState({});
@@ -95,7 +95,7 @@ const ContactForm = () => {
   };
 
   return (
-    <form ref={form} onSubmit={handleSubmit} noValidate>
+    <form className="contact-form" ref={form} onSubmit={handleSubmit} noValidate>
       <TextField
         label="Name"
         variant="outlined"
@@ -107,6 +107,7 @@ const ContactForm = () => {
         helperText={formErrors.name}
         fullWidth
         margin="normal"
+        className=""
       />
       <TextField
         label="Email"
@@ -149,6 +150,7 @@ const ContactForm = () => {
         helperText={formErrors.message}
         fullWidth
         margin="normal"
+        className="contact-message"
       />
       <Button type="submit" value="Send" variant="contained" color="primary">
         Submit

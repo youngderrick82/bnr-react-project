@@ -3,6 +3,8 @@ import * as ReactDOM from "react-dom/client";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/css/bootstrap.css";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faBackward, faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Root from "./routes/root";
@@ -16,6 +18,8 @@ import ContactUs from "./pages/contactus";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Waitlist from "./pages/waitlist";
+
+library.add()
 
 function Layout() {
   return (
