@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Card, CardContent, Typography, Grid, Box } from "@mui/material";
 import axios from "axios";
 
-const twitchBcId = process.env.REACT_APP_TTV_BC_ID;
-
 const TwitchSchedule = () => {
   const [schedule, setSchedule] = useState([]);
   const [token, setToken] = useState("");
@@ -45,12 +43,15 @@ const TwitchSchedule = () => {
   };
 
   const fetchTwitchSchedule = () => {
-    fetch(`https://api.twitch.tv/helix/schedule?broadcaster_id=${twitchBcId}`, {
-      headers: {
-        "Client-ID": process.env.REACT_APP_TTV_CLIENT_ID,
-        Authorization: `Bearer ${token}`,
-      },
-    })
+    fetch(
+      `https://api.twitch.tv/helix/schedule?broadcaster_id=${process.env.REACT_APP_TTV_BC_ID}`,
+      {
+        headers: {
+          "Client-ID": process.env.REACT_APP_TTV_CLIENT_ID,
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    )
       .then((response) => response.json())
       .then((data) => {
         const organizedByDay = organizeStreamsByDay(data.data.segments);
