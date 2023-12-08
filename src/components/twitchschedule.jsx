@@ -3,6 +3,7 @@ import { Card, CardContent, Typography, Grid, Box } from "@mui/material";
 import axios from "axios";
 
 const twitchBcId = process.env.REACT_APP_TTV_BC_ID;
+const host = process.env.REACT_APP_API_URL;
 
 const TwitchSchedule = () => {
   const [schedule, setSchedule] = useState([]);
@@ -69,9 +70,7 @@ const TwitchSchedule = () => {
 
   const fetchToken = async () => {
     try {
-      const response = await axios.get(
-        "http://localhost:3001/get-twitch-token"
-      );
+      const response = await axios.get(`${host}/get-twitch-token`);
       console.log("Fetched token:", response.data.access_token);
       setToken(response.data.access_token);
     } catch (error) {
