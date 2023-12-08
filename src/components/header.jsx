@@ -22,7 +22,7 @@ function Header() {
   const fetchToken = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3001/get-twitch-token"
+        `${process.env.REACT_APP_API_URL}/get-twitch-token`
       );
       console.log("Fetched token:", response.data.access_token);
       setToken(response.data.access_token);
