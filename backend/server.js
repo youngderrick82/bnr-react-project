@@ -10,14 +10,14 @@ const app = express();
 // Use CORS - adjust as needed for your deployment environment
 app.use(
   cors({
-    origin: "http://localhost:3000", // You might need to update this for your production environment
+    origin: "https://bnr-react-e86f4909b613.herokuapp.com/", // You might need to update this for your production environment
   })
 );
 
 app.set("trust proxy", true);
 
 // Serve static files from the React app build directory
-app.use(express.static(path.join(__dirname, '..', 'build')));
+app.use(express.static(path.join(__dirname, "..", "build")));
 
 // API routes
 const TWITCH_CLIENT_ID = process.env.TTV_CLIENT_ID;
@@ -60,8 +60,8 @@ app.get("/get-twitch-token", async (req, res) => {
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'build', 'index.html'));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "build", "index.html"));
 });
 
 // Start the server
@@ -69,10 +69,6 @@ const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
-
-
-
 
 /* require("dotenv").config();
 const express = require("express");
