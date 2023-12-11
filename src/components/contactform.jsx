@@ -42,6 +42,7 @@ const ContactForm = () => {
     message: "",
   });
   const [formErrors, setFormErrors] = useState({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -91,8 +92,16 @@ const ContactForm = () => {
 
     if (Object.keys(errors).length === 0) {
       sendEmail();
+      setFormValues({ name: "", email: "", type: "", message: "" });
+      setIsSubmitted(true);
     }
   };
+
+  useEffect(() => {
+    if (isSubmitted) {
+      setIsSubmitted(false);
+    }
+  }, [formValues]);
 
   return (
     <form className="contact-form" ref={form} onSubmit={handleSubmit} noValidate>
@@ -155,6 +164,14 @@ const ContactForm = () => {
       <Button type="submit" value="Send" variant="contained" color="primary">
         Submit
       </Button>
+      <div className="formAlert" role="alert" aria-live="assertive">
+          Your message has been successfully sent!
+        </div>
+      {isSubmitted && (
+        <div className="formAlert" role="alert" aria-live="assertive">
+          Your message has been successfully sent!
+        </div>
+      )}
     </form>
   );
 };

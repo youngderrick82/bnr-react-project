@@ -46,7 +46,7 @@
     "start": "node backend/server.js",
     "build": "react-scripts build",
     "heroku-postbuild": "npm run build",
-    "dev": "concurrently \"react-scripts start\" \"nodemon backend/server.js\""
+    "dev": "concurrently --names \"REACT,NODE\" --prefix-colors \"blue,green\" \"react-scripts start\" \"nodemon backend/server.js\""
   },
   "eslintConfig": {
     "extends": [

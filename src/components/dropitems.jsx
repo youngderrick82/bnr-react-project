@@ -6,6 +6,7 @@ const dropItems = {
       "Feedback and Appreciation",
       "Content Suggestions",
       "Merchandise Inquiry",
+      "Questions About My Order",
       "Support or Technical Issue",
       "Partnership and Collaboration Opportunities",
       "Press and Media Contact",

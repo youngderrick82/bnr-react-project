@@ -44,7 +44,7 @@ function Header() {
         return res.json();
       })
       .then((d) => {
-        if (!d.data == []) {
+        if (d.data == []) {
           console.log(d.data);
           setIsLive(false);
         } else {
@@ -61,7 +61,7 @@ function Header() {
           target="_blank"
           href="https://www.twitch.tv/blacknerdrises"
         >
-          Live Now 
+          Live Now
         </Nav.Link>
       </Nav>
     ) : (
