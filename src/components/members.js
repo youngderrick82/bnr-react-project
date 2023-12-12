@@ -66,7 +66,7 @@ const teamMembers = [
     about: "I’m a gamer that loves anime! Awkward at first but I can talk after a while. My favorite game series is the Bioshock series. I play all of them every year around Halloween. I love horror games and movies. My favorite anime is SpyxFamily",
     tiktok: "tiktok.com/@madamstormy",
     facebook: "",
-    twitter: "https://twitter.com/MadamStormy",
+    twitter: "",
     instagram: "",
     thread: "",
     image: "madamstormy.jpg"

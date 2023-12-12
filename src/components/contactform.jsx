@@ -134,7 +134,7 @@ const ContactForm = () => {
       <FormControl fullWidth margin="normal">
         <InputLabel>Inquiry Type</InputLabel>
         <Select
-          value={formValues.dropdown}
+          value={formValues.type}
           onChange={handleInputChange}
           onBlur={handleBlur}
           name="type"

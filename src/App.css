@@ -324,6 +324,14 @@ h2 {
   border-radius: 25px;
 }
 
+/* Error Page */
+
+.error-animation {
+  height: 35%;
+  width: 35%;
+  margin: auto;
+}
+
 /* Homepage styles */
 
 .inline-logos {

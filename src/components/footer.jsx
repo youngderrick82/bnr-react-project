@@ -48,16 +48,16 @@ function Footer() {
             <h3 className="footer-header">Quick Links</h3>
             <ul className="footer-list">
               <li>
-                <a href="pages/events">Schedule</a>
+                <a href="../pages/events">Schedule</a>
               </li>
               <li>
-                <a href="pages/team">About the Team</a>
+                <a href="../pages/team">About the Team</a>
               </li>
               <li>
-                <a href="pages/contactus">Contact-Us</a>
+                <a href="../pages/contactus">Contact-Us</a>
               </li>
               <li>
-                <a href="pages/merch">Merch</a>
+                <a target="_blank" href="https://www.yourfavoritemerch.com/collections/black-nerd-rising">Merch</a>
               </li>
             </ul>
           </Grid>

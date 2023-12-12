@@ -65,10 +65,10 @@ const router = createBrowserRouter([
         path: "pages/ondemand",
         element: <OnDemand />,
       },
-      {
-        path: "pages/merch",
-        element: <Waitlist />,
-      },
+      // {
+      //   path: "pages/merch",
+      //   element: <Waitlist />,
+      // },
     ],
   },
 ]);
