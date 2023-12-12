@@ -8,6 +8,11 @@
   src: url(/src/pages/assets/fonts/GbshintoRegular-VMGx.otf);
 }
 
+@font-face {
+  font-family: protoculture;
+  src: url(/src/pages/assets/fonts/rapier-zero/RapierZero-325M.ttf)
+}
+
 #root {
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -670,6 +675,42 @@ swiper-pagination {
 
 .reach-out {
   margin: 45px;
+}
+
+@keyframes cardTransitionShow {
+    0% {
+      right: -220px;
+    }
+    95% {
+      right: 250px;
+    }
+}
+
+@keyframes cardTransitionHide {
+  5% {
+    right: 250px;
+  }
+}
+
+.alert-card {
+  animation: cardTransitionShow 1s linear;
+  position: absolute;
+  right: 220px;
+  height: 40px;
+  background-color: greenyellow !important;
+}
+
+.alert-card-hidden {
+  animation: cardTransitionHide 10s linear;
+  position: absolute;
+  right: -220px;
+  height: 40px;
+  background-color: greenyellow !important
+}
+
+.card-text {
+  font-family: protoculture;
+  font-size: 1.5rem;
 }
 
 /* Meet The Team */

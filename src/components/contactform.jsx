@@ -94,17 +94,24 @@ const ContactForm = () => {
       sendEmail();
       setFormValues({ name: "", email: "", type: "", message: "" });
       setIsSubmitted(true);
+      setTimeout(() => setIsSubmitted(false), 10000);
     }
   };
 
-  useEffect(() => {
+  const alertStatus = () => {
     if (isSubmitted) {
-      setIsSubmitted(false);
+      return "alert-card";
     }
-  }, [formValues]);
+    return "alert-card-hidden";
+  };
 
   return (
-    <form className="contact-form" ref={form} onSubmit={handleSubmit} noValidate>
+    <form
+      className="contact-form"
+      ref={form}
+      onSubmit={handleSubmit}
+      noValidate
+    >
       <TextField
         label="Name"
         variant="outlined"
@@ -165,8 +172,12 @@ const ContactForm = () => {
         Submit
       </Button>
       {isSubmitted && (
-        <div className="formAlert" role="alert" aria-live="assertive">
-          Your message has been successfully sent!
+        <div className="formAlert t-center" role="alert" aria-live="assertive">
+          <Card className="alert-card-temp">
+            <div className="card-text">
+              <p>Your message was successfully sent!</p>
+            </div>
+          </Card>
         </div>
       )}
     </form>
