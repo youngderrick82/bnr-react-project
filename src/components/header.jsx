@@ -44,10 +44,10 @@ function Header() {
       })
       .then((data) => {
         if (!data.data == []) {
-          setIsLive(true);
+          setIsLive(false);
           console.log("Status Results", data.data);
         } else {
-          setIsLive(false);
+          setIsLive(true);
           console.log("Status Results", data.data);
         }
       });
