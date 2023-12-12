@@ -120,9 +120,9 @@ function Header() {
               Separated link
             </NavDropdown.Item> */}
             </NavDropdown>
-            <LinkContainer to={"pages/merch/"}>
-              <Nav.Link>Merch</Nav.Link>
-            </LinkContainer>
+            
+              <Nav.Link target="_blank" href="https://www.yourfavoritemerch.com/collections/black-nerd-rising">Merch</Nav.Link>
+           
           </Nav>
           {streamIndicator()}
           {/* <Nav.Link className="stream-link" href="#deets">Streaming</Nav.Link> */}

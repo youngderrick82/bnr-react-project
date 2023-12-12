@@ -164,9 +164,6 @@ const ContactForm = () => {
       <Button type="submit" value="Send" variant="contained" color="primary">
         Submit
       </Button>
-      <div className="formAlert" role="alert" aria-live="assertive">
-          Your message has been successfully sent!
-        </div>
       {isSubmitted && (
         <div className="formAlert" role="alert" aria-live="assertive">
           Your message has been successfully sent!
