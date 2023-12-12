@@ -24,7 +24,6 @@ function Header() {
       const response = await axios.get(
         `${process.env.REACT_APP_API_URL}/get-twitch-token`
       );
-      console.log("Fetched token:", response.data.access_token);
       setToken(response.data.access_token);
     } catch (error) {
       console.error("Error fetching Twitch token:", error);
@@ -43,12 +42,13 @@ function Header() {
         console.log(res.json);
         return res.json();
       })
-      .then((d) => {
-        if (d.data == []) {
-          console.log(d.data);
-          setIsLive(false);
-        } else {
+      .then((data) => {
+        if (!data.data == []) {
           setIsLive(true);
+          console.log("Status Results", d.data);
+        } else {
+          setIsLive(false);
+          console.log("Status Results", d.data);
         }
       });
   };
@@ -120,9 +120,13 @@ function Header() {
               Separated link
             </NavDropdown.Item> */}
             </NavDropdown>
-            
-              <Nav.Link target="_blank" href="https://www.yourfavoritemerch.com/collections/black-nerd-rising">Merch</Nav.Link>
-           
+
+            <Nav.Link
+              target="_blank"
+              href="https://www.yourfavoritemerch.com/collections/black-nerd-rising"
+            >
+              Merch
+            </Nav.Link>
           </Nav>
           {streamIndicator()}
           {/* <Nav.Link className="stream-link" href="#deets">Streaming</Nav.Link> */}
