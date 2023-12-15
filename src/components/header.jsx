@@ -43,7 +43,7 @@ function Header() {
         return res.json();
       })
       .then((data) => {
-        if (data.data == []) {
+        if (data.data.length === 0) {
           setIsLive(false);
           console.log("Status Results", data.data);
         } else {
