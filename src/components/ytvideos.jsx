@@ -10,32 +10,6 @@ import {
   Typography,
 } from "@mui/material";
 
-// let nextPageToken = "";
-// function getVideos() {
-//   fetch(
-//     "https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UC2ZgT5OJZvH4rogFojlEksA&maxResults=3&order=date&key=%20AIzaSyBhy4QSDgpDgUxGW5GAyVC3Re47y4Q8yEI&pageToken=" +
-//       nextPageToken
-//   )
-//     .then((result) => {
-//       return result.json();
-//     })
-//     .then((data) => {
-//       let videos = data.items;
-//       nextPageToken = data.nextPageToken;
-//       let videoContainer = document.querySelector(".youtube-container");
-//       for (videos of videos) {
-//         videoContainer.innerHTML += `
-//             <div class='video-item'>
-//             <a href='https://www.youtube.com/watch?v=${videos.id.videoId}_channel=BlackNerdRises'>
-//             <h2 alt='${videos.snippet.title}'>${videos.snippet.title}</h2>
-//             <img src='${videos.snippet.thumbnails.medium.url}'>
-//             </a>
-//             </div>
-//         `;
-//       }
-//     });
-// }
-
 const youtubeAPI = process.env.REACT_APP_YT_API_KEY;
 
 const VideoCards = () => {
