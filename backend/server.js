@@ -6,7 +6,6 @@ const cors = require("cors");
 
 const app = express();
 
-// Use CORS - adjust as needed for your deployment environment
 const allowedOrigins = [
   "https://bnr-react-e86f4909b613.herokuapp.com",
   "https://blacknerdrises.com",
@@ -16,7 +15,7 @@ const allowedOrigins = [
 
 app.use(
   cors({
-    origin: allowedOrigins, // Update for your production environment
+    origin: allowedOrigins,
   })
 );
 
@@ -44,7 +43,7 @@ const getToken = async () => {
 
     accessToken = response.data.access_token;
     const expiresIn = response.data.expires_in;
-    tokenExpiry = Date.now() + expiresIn * 1000; // Convert to milliseconds
+    tokenExpiry = Date.now() + expiresIn * 1000; 
     console.log("Twitch token fetched successfully");
   } catch (error) {
     console.error("Error fetching Twitch token:", error);
@@ -68,7 +67,7 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "build", "index.html"));
 });
 
-// Start the server
+
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
@@ -119,7 +118,7 @@ const getToken = async () => {
 
     accessToken = response.data.access_token;
     const expiresIn = response.data.expires_in;
-    tokenExpiry = Date.now() + expiresIn * 1000; // Convert to milliseconds
+    tokenExpiry = Date.now() + expiresIn * 1000; 
     console.log("success my guy");
   } catch (error) {
     console.error("Error fetching Twitch token:", error);
