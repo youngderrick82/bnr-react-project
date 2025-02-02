@@ -28,8 +28,6 @@ let styles = {
     visibility: "visible",
   },
 
-  //you can use media queries to change the way your calendar looks at different screen sizes
-  //if you don't provide styles for a view, it will default to the view you provided it for
 };
 
 const language = "EN";
